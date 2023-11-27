@@ -10,3 +10,5 @@ jobs:
         steps:
             - name: upload code climate
               uses: paambaati/codeclimate-action@v3.0.0
+              with:
+                coverageCommand: coverage report
