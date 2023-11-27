@@ -6,9 +6,11 @@ on:
 
 jobs:
     test:
+        name: test
+        environment: teste
         runs-on : ubuntu-latest
         steps:
             - name: upload code climate
               uses: paambaati/codeclimate-action@v3.0.0
-              with:
-                coverageCommand: coverage report
+              env:
+                CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
